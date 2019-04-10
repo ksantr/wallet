@@ -1,0 +1,1040 @@
+2019-04-08 17:46:11,488 Get balance request: http://wallet/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 95fc53e391f93d7420281e123d45043ffee99e4c67e614a8068d875ea58585b3
+2019-04-08 17:46:11,491 Starting new HTTP connection (1): wallet:80
+2019-04-08 17:46:11,492 HTTPConnectionPool(host='wallet', port=80): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f4df5fe7048>: Failed to establish a new connection: [Errno 111] Connection refused',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f4df5fe7048>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='wallet', port=80): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f4df5fe7048>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 513, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='wallet', port=80): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f4df5fe7048>: Failed to establish a new connection: [Errno 111] Connection refused',))
+2019-04-08 17:47:04,248 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 17:47:04,251 Starting new HTTP connection (1): wallet:9091
+2019-04-08 17:47:04,263 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 17:50:47,850 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 17:50:47,856 Starting new HTTP connection (1): wallet:9091
+2019-04-08 17:50:47,867 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 17:56:45,520 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 17:56:45,523 Starting new HTTP connection (1): wallet:9091
+2019-04-08 17:56:45,536 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:05:18,338 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:05:18,342 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:05:18,373 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:05:45,855 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:05:45,859 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:05:45,894 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:07:19,774 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:07:19,778 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:07:19,808 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:08:00,390 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:08:00,393 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:08:00,429 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:08:35,493 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:08:35,496 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:08:35,526 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:08:58,156 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:08:58,159 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:08:58,208 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:09:53,923 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:09:53,927 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:09:53,954 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 18:09:53,956 Get balance response: {'balance': 1000.0, 'status': 'success'}
+2019-04-08 18:11:38,588 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:11:38,591 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:11:38,625 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 18:11:38,626 Get balance response: {'balance': 1000.0, 'status': 'success'}
+2019-04-08 18:31:06,231 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:31:06,235 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:31:06,236 HTTPConnectionPool(host='wallet', port=9091): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff708b8d080>: Failed to establish a new connection: [Errno 111] Connection refused',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff708b8d080>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='wallet', port=9091): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff708b8d080>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 58, in get_balance
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 513, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='wallet', port=9091): Max retries exceeded with url: /api/v1/balance (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff708b8d080>: Failed to establish a new connection: [Errno 111] Connection refused',))
+2019-04-08 18:31:15,162 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 18:31:15,166 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:31:15,200 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 18:31:15,201 Get balance response: {'balance': 1000.0, 'status': 'success'}
+2019-04-08 18:32:31,922 History request: http://wallet:9091/api/v1/hostory {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 0f13fbca8db345284ee1785c74103d81910f7594bee79ca0582239e06ddfc144
+2019-04-08 18:32:31,926 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:32:31,939 http://wallet:9091 "POST /api/v1/hostory HTTP/1.1" 404 232
+2019-04-08 18:32:31,940 404 Client Error: NOT FOUND for url: http://wallet:9091/api/v1/hostory
+Traceback (most recent call last):
+  File "client.py", line 107, in get_history
+    res.raise_for_status()
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/models.py", line 939, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: NOT FOUND for url: http://wallet:9091/api/v1/hostory
+2019-04-08 18:33:05,827 History request: http://wallet:9091/api/v1/hostory {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 0f13fbca8db345284ee1785c74103d81910f7594bee79ca0582239e06ddfc144
+2019-04-08 18:33:05,830 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:33:05,833 http://wallet:9091 "POST /api/v1/hostory HTTP/1.1" 404 232
+2019-04-08 18:33:05,834 404 Client Error: NOT FOUND for url: http://wallet:9091/api/v1/hostory
+Traceback (most recent call last):
+  File "client.py", line 107, in get_history
+    res.raise_for_status()
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/models.py", line 939, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: NOT FOUND for url: http://wallet:9091/api/v1/hostory
+2019-04-08 18:33:25,104 History request: http://wallet:9091/api/v1/history {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 704749c0b9e42a152d02da785399f0db8eb71619a68a6cd8c5127cbeca3146b8
+2019-04-08 18:33:25,107 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:33:25,145 http://wallet:9091 "POST /api/v1/history HTTP/1.1" 200 44
+2019-04-08 18:33:25,146 Get history response: {'history': [], 'status': 'success'}
+2019-04-08 18:42:59,492 History request: http://wallet:9091/api/v1/history {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 704749c0b9e42a152d02da785399f0db8eb71619a68a6cd8c5127cbeca3146b8
+2019-04-08 18:42:59,496 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:42:59,531 http://wallet:9091 "POST /api/v1/history HTTP/1.1" 200 44
+2019-04-08 18:42:59,533 Get history response: {'history': [], 'status': 'success'}
+2019-04-08 18:45:00,511 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} a3c102b428d4e7ef3ea38a90745ee1bcf1dd2d8530d8f8b96e0e388b004ae501
+2019-04-08 18:45:00,515 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:45:00,558 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 96, in send_money
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:45:58,803 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} a3c102b428d4e7ef3ea38a90745ee1bcf1dd2d8530d8f8b96e0e388b004ae501
+2019-04-08 18:45:58,807 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:45:58,856 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 18:45:58,857 Send money response: {'status': 'success'}
+2019-04-08 18:46:29,255 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 600.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} 272e1016d6eb998f4b9fd45543a08d8e81fa8f2fa2eeb531a228c36b37c6ba5c
+2019-04-08 18:46:29,258 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:46:29,297 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:46:29,299 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:46:46,723 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.66, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} e67eea1843b4d05c75d04b2ac67f412f7e5fbe696604acc1817604374af7b3d6
+2019-04-08 18:46:46,726 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:46:46,759 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:46:46,761 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:47:08,300 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.6, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} 2fe056d7cb2ae00818bb6b2fac6d03175393bf0ff5f9ca92a79f3f3d876bf53c
+2019-04-08 18:47:08,304 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:47:08,334 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:47:08,336 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:47:13,572 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} 3dfacf41d6b0bfbccffb35665fcb222e4af4cde04a607bf7511237facdc12a48
+2019-04-08 18:47:13,576 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:48:02,947 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} 3dfacf41d6b0bfbccffb35665fcb222e4af4cde04a607bf7511237facdc12a48
+2019-04-08 18:48:02,951 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:48:02,984 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:48:02,985 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:48:11,478 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 5e7a126f0ae945e941e21cebbed2ab67c4054e1c42068e3e481fc51eb8f269d7
+2019-04-08 18:48:11,482 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:48:19,477 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 96, in send_money
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 18:48:38,725 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 5e7a126f0ae945e941e21cebbed2ab67c4054e1c42068e3e481fc51eb8f269d7
+2019-04-08 18:48:38,728 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:48:38,779 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 18:48:38,779 Send money response: {'status': 'success'}
+2019-04-08 18:48:50,218 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.6, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} f733e22728ceb771f94e17841ade194bfa899fda7aa574f97bdc31e08e943f88
+2019-04-08 18:48:50,222 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:48:50,266 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 18:48:50,267 Send money response: {'status': 'success'}
+2019-04-08 18:49:08,130 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 60.6, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} 2fe056d7cb2ae00818bb6b2fac6d03175393bf0ff5f9ca92a79f3f3d876bf53c
+2019-04-08 18:49:08,133 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:49:08,163 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:49:08,165 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:52:40,320 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 120.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 327291ba923a8a3850ce43a3b0f6f2ad318698fed164eb3f36c930f9b9c6cbaa
+2019-04-08 18:52:40,333 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:52:40,372 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:52:40,373 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:52:47,167 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 50.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 89f2ef6e843d221f4baf19274458a248f434644461cbd96a03e1e16297d04304
+2019-04-08 18:52:47,171 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:53:25,410 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 50.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 89f2ef6e843d221f4baf19274458a248f434644461cbd96a03e1e16297d04304
+2019-04-08 18:53:25,413 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:53:40,957 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 50.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 89f2ef6e843d221f4baf19274458a248f434644461cbd96a03e1e16297d04304
+2019-04-08 18:53:40,961 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:53:41,003 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 18:53:41,005 Send money response: {'status': 'success'}
+2019-04-08 18:53:54,626 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 30.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 36a9d79bf1c011c88358ffcbf3e2800b77d35b55714a055a3e9fbb9e97bf55ef
+2019-04-08 18:53:54,630 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:03,140 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 30.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 36a9d79bf1c011c88358ffcbf3e2800b77d35b55714a055a3e9fbb9e97bf55ef
+2019-04-08 18:54:03,143 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:03,175 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:54:03,176 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:54:08,418 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 20.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} f6fe288c2df16575ad1fbf2064b3862b92a98bc8a25e5bb3cd5077098ea43ac4
+2019-04-08 18:54:08,422 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:12,609 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 20.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} f6fe288c2df16575ad1fbf2064b3862b92a98bc8a25e5bb3cd5077098ea43ac4
+2019-04-08 18:54:12,613 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:12,652 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 18:54:12,654 Send money response: {'status': 'success'}
+2019-04-08 18:54:14,955 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 20.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} f6fe288c2df16575ad1fbf2064b3862b92a98bc8a25e5bb3cd5077098ea43ac4
+2019-04-08 18:54:14,958 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:18,647 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 50.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 89f2ef6e843d221f4baf19274458a248f434644461cbd96a03e1e16297d04304
+2019-04-08 18:54:18,650 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:54:18,682 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:54:18,684 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:55:04,246 History request: http://wallet:9091/api/v1/history {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 704749c0b9e42a152d02da785399f0db8eb71619a68a6cd8c5127cbeca3146b8
+2019-04-08 18:55:04,250 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:55:04,292 http://wallet:9091 "POST /api/v1/history HTTP/1.1" 200 576
+2019-04-08 18:55:04,294 Get history response: {'history': [{'amount': 100.0, 'date': 'Mon, 08 Apr 2019 15:45:58 GMT', 'recipient': 2}, {'amount': 60.0, 'date': 'Mon, 08 Apr 2019 15:48:38 GMT', 'recipient': 2}, {'amount': 60.6, 'date': 'Mon, 08 Apr 2019 15:48:50 GMT', 'recipient': 2}, {'amount': 50.0, 'date': 'Mon, 08 Apr 2019 15:53:40 GMT', 'recipient': 6}, {'amount': 20.0, 'date': 'Mon, 08 Apr 2019 15:54:12 GMT', 'recipient': 6}], 'status': 'success'}
+2019-04-08 18:59:08,026 History request: http://wallet:9091/api/v1/history {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} 704749c0b9e42a152d02da785399f0db8eb71619a68a6cd8c5127cbeca3146b8
+2019-04-08 18:59:08,029 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:59:08,071 http://wallet:9091 "POST /api/v1/history HTTP/1.1" 200 761
+2019-04-08 18:59:08,072 Get history response: {'history': [{'amount': 100.0, 'date': 'Mon, 08 Apr 2019 15:45:58 GMT', 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'}, {'amount': 60.0, 'date': 'Mon, 08 Apr 2019 15:48:38 GMT', 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'}, {'amount': 60.6, 'date': 'Mon, 08 Apr 2019 15:48:50 GMT', 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'}, {'amount': 50.0, 'date': 'Mon, 08 Apr 2019 15:53:40 GMT', 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'}, {'amount': 20.0, 'date': 'Mon, 08 Apr 2019 15:54:12 GMT', 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'}], 'status': 'success'}
+2019-04-08 18:59:50,277 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 4c5be378fc40ec3a60d398bf3a3d0c7ecc7d9322ee10e6685ba2e4245fdef1ab
+2019-04-08 18:59:50,280 Starting new HTTP connection (1): wallet:9091
+2019-04-08 18:59:50,316 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 18:59:50,317 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 18:59:55,214 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf3'} ac7827ffce2194b6b9d2b3ada4ca6a3907e331c36e96af67080c8c4f55fa807a
+2019-04-08 18:59:55,217 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:17:42,879 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf6'} 4c5be378fc40ec3a60d398bf3a3d0c7ecc7d9322ee10e6685ba2e4245fdef1ab
+2019-04-08 19:17:42,882 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:17:42,919 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 64
+2019-04-08 19:17:42,920 Send money response: {'message': 'Recipient Limit Exceed', 'status': 'error'}
+2019-04-08 19:17:46,395 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 84be699d8ee243c87898c6bd942811c6ab5cffd337dd4a245b83ab4b2a0ea36d
+2019-04-08 19:17:46,398 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:17:49,028 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 84be699d8ee243c87898c6bd942811c6ab5cffd337dd4a245b83ab4b2a0ea36d
+2019-04-08 19:17:49,032 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:17:50,573 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 1.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 84be699d8ee243c87898c6bd942811c6ab5cffd337dd4a245b83ab4b2a0ea36d
+2019-04-08 19:17:50,577 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:17:50,615 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 19:17:50,616 Send money response: {'status': 'success'}
+2019-04-08 19:22:13,548 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 10000.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} db11ef7748e413bdaccda4f249ecc485d86984cb123642804a9f7410b79ce239
+2019-04-08 19:22:13,552 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:22:13,591 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 58
+2019-04-08 19:22:13,592 Send money response: {'message': 'Not enough money', 'status': 'error'}
+2019-04-08 19:31:15,243 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 10000.55, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} db11ef7748e413bdaccda4f249ecc485d86984cb123642804a9f7410b79ce239
+2019-04-08 19:31:15,246 Starting new HTTP connection (1): wallet:9091
+2019-04-08 19:31:15,286 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 58
+2019-04-08 19:31:15,288 Send money response: {'message': 'Not enough money', 'status': 'error'}
+2019-04-08 20:09:53,497 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': -1.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} ac39498f50a4ec08aa5f58b22f850db4d6a1da624f16ad887d96f7c316ad45ec
+2019-04-08 20:09:53,501 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:09:53,553 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 20:09:53,554 Send money response: {'status': 'success'}
+2019-04-08 20:10:15,639 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 20:10:15,642 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:10:15,675 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 20:10:15,677 Get balance response: {'balance': 705.75, 'status': 'success'}
+2019-04-08 20:10:18,426 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': -1.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} ac39498f50a4ec08aa5f58b22f850db4d6a1da624f16ad887d96f7c316ad45ec
+2019-04-08 20:10:18,430 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:10:18,492 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 20:10:18,493 Send money response: {'status': 'success'}
+2019-04-08 20:10:20,002 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 20:10:20,005 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:10:20,035 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 20:10:20,037 Get balance response: {'balance': 706.75, 'status': 'success'}
+2019-04-08 20:10:41,130 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': -100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} d2a5620269bcab977d66bff5b2dcc58b3ed514331d6b857fa9aff01a45f02b08
+2019-04-08 20:10:41,134 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:10:41,189 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 20:10:41,190 Send money response: {'status': 'success'}
+2019-04-08 20:10:42,365 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 20:10:42,368 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:10:42,401 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 20:10:42,403 Get balance response: {'balance': 806.75, 'status': 'success'}
+2019-04-08 20:13:19,561 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': -100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf9'} 9d36708ae2d67339d5fbefa08d68e2e265471f5e549535f259c2091373a360b6
+2019-04-08 20:13:19,565 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:13:19,610 ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/root666/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 96, in send_money
+    res = requests.post(url, json=payload, headers=headers)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2019-04-08 20:20:00,157 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': -100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf9'} 9d36708ae2d67339d5fbefa08d68e2e265471f5e549535f259c2091373a360b6
+2019-04-08 20:20:00,161 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:20:00,200 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 61
+2019-04-08 20:20:00,202 Send money response: {'message': 'Recipient Not Found', 'status': 'error'}
+2019-04-08 20:20:13,744 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc', 'amount': 100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} a3c102b428d4e7ef3ea38a90745ee1bcf1dd2d8530d8f8b96e0e388b004ae501
+2019-04-08 20:20:13,748 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:20:13,791 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 200 26
+2019-04-08 20:20:13,792 Send money response: {'status': 'success'}
+2019-04-08 20:20:19,046 Get balance request: http://wallet:9091/api/v1/balance {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfc'} bf8200e1a5cd518a22e69b7e88313f30a6a86d9397cfef02ec2c52cae32462e9
+2019-04-08 20:20:19,050 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:20:19,080 http://wallet:9091 "POST /api/v1/balance HTTP/1.1" 200 48
+2019-04-08 20:20:19,082 Get balance response: {'balance': 706.75, 'status': 'success'}
+2019-04-08 20:20:32,029 Send money request: http://wallet:9091/api/v1/send {'api_key': '8c82c0e8-9d65-4332-b481-803a8f654bfa', 'amount': 100.0, 'recipient': '8c82c0e8-9d65-4332-b481-803a8f654bf2'} 1ed584da928c7031cd68ab649837df7533248e84c6b48ce0ef5694c53a8c6267
+2019-04-08 20:20:32,033 Starting new HTTP connection (1): wallet:9091
+2019-04-08 20:20:32,076 http://wallet:9091 "POST /api/v1/send HTTP/1.1" 400 132
+2019-04-08 20:20:32,077 400 Client Error: BAD REQUEST for url: http://wallet:9091/api/v1/send
+Traceback (most recent call last):
+  File "client.py", line 97, in send_money
+    res.raise_for_status()
+  File "/home/root666/.local/lib/python3.6/site-packages/requests/models.py", line 939, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: BAD REQUEST for url: http://wallet:9091/api/v1/send
